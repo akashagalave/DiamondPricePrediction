@@ -10,12 +10,20 @@
             padding: 0;
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #1e90ff, #ff1493);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             color: #fff;
             overflow: hidden;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
         }
 
         h1 {
@@ -26,7 +34,7 @@
             z-index: 1;
             color: #fff;
             text-shadow: 0 0 10px #fff, 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493, 0 0 50px #ff1493;
-            animation: glow 1.5s infinite alternate;
+            animation: glow 1.5s infinite alternate, floatText 3s ease-in-out infinite;
             transform: perspective(500px) rotateX(20deg);
         }
 
@@ -37,6 +45,12 @@
             100% {
                 text-shadow: 0 0 20px #fff, 0 0 30px #ff69b4, 0 0 40px #ff69b4, 0 0 50px #ff69b4, 0 0 60px #ff69b4;
             }
+        }
+
+        @keyframes floatText {
+            0% { transform: perspective(500px) rotateX(20deg) translateY(0); }
+            50% { transform: perspective(500px) rotateX(20deg) translateY(-20px); }
+            100% { transform: perspective(500px) rotateX(20deg) translateY(0); }
         }
 
         .background-effects {
@@ -125,7 +139,6 @@
             height: 45px;
             animation-duration: 14s;
         }
-
     </style>
 </head>
 <body>

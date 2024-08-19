@@ -3,4 +3,5 @@ scikit-learn
 numpy
 seaborn
 matplotlib
+Flask
 #-e .
